@@ -3,6 +3,7 @@ package api;
 import org.junit.Test;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static io.restassured.RestAssured.given;
 
@@ -16,12 +17,9 @@ public class TestSortApi {
                 .get("users")
                 .then().log().all()
                 .extract().body().jsonPath().getList("root", UserData.class);
-
-
-
-        //List<Integer> id = users.stream().map(UserData::getId).collect(Collectors.toList());
-        //List<Integer> sortID = id.stream().sorted().collect(Collectors.toList());
-        //System.out.println(sortID);
+        List<Integer> id = users.stream().map(UserData::getId).collect(Collectors.toList());
+        List<Integer> sortID = id.stream().sorted().collect(Collectors.toList());
+        System.out.println(sortID);
     }
 
     @Test
