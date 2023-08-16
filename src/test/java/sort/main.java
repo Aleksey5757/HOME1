@@ -17,6 +17,8 @@ import page.UserPage;
 
 import java.time.Duration;
 
+import static org.hamcrest.CoreMatchers.notNullValue;
+
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class main {
     private RemoteWebDriver driver;
@@ -39,10 +41,10 @@ public class main {
         wait = new WebDriverWait(driver, Duration.ofSeconds(200));
     }
 
-     @AfterEach
+    @AfterEach
  public void tearDown() throws InterruptedException {
-     Thread.sleep(5000);
-        driver.quit();}
+    Thread.sleep(5000);
+       driver.quit();}
 
 
 
@@ -99,14 +101,9 @@ public class main {
     public void sort() {
         driver.get(config.baseUrl);
         var userPage = new UserPage(driver, wait);
+        userPage.openPageStep1();
         userPage.CLPage();
         userPage.setSortingByID(true);
-       // userPage.Assert();
-       Assert.assertEquals(userPage.getFirstRow(),TestValues.TEST_ROW);
-       Assert.assertEquals(userPage.getSecondRow(),TestValues.TESTSecond_ROW);
-       // Assert.assertEquals(userPage.getSecondLastRow(),TestValues.TESTSecondLast_ROW); //строки добавляются
-       // Assert.assertEquals(userPage.getLastRow(),TestValues.TESTLast_ROW);// строки добавляются
-       //Assert.assertEquals(userPage.getMiddlRow(),TestValues.TESTMidl_ROW);//строки добавляются
-
-         }
+        userPage.Assert();
+        }
 }

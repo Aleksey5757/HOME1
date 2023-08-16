@@ -1,6 +1,8 @@
 package page;
 
 import Help.TestValues;
+import io.qameta.allure.Step;
+import org.hamcrest.Condition;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,6 +12,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
+
+import static org.hamcrest.CoreMatchers.notNullValue;
 
 public class UserPage extends AbstractPage  {
     public UserPage(WebDriver driver, WebDriverWait wait) {
@@ -100,11 +104,16 @@ public class UserPage extends AbstractPage  {
     public void Assert(){
         Assert.assertEquals(getFirstRow(), TestValues.TEST_ROW);
         Assert.assertEquals(getSecondRow(),TestValues.TESTSecond_ROW);
-       // Assert.assertEquals(getSecondLastRow(),TestValues.TESTSecondLast_ROW); //строки добавляются
-       // Assert.assertEquals(getLastRow(),TestValues.TESTLast_ROW);// строки добавляются
-        //Assert.assertEquals(getMiddlRow(),TestValues.TESTMidl_ROW);//строки добавляются
-    }
+        Assert.assertNotNull(getSecondLastRow());
+        Assert.assertNotNull(getLastRow());
+        Assert.assertNotNull(getMiddlRow());
+          }
 
+
+    @Step("sdsadasdОткрытие  страницы")
+    public void openPageStep1() {
+        // Открытие страницы
+    }
 
 
 

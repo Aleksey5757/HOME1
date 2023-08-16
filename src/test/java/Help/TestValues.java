@@ -1,7 +1,7 @@
 package Help;
 
 public class TestValues {
-    public static String TEST_ROW = "1 Vasiliy Rubenstein 42 MALE 830452.46";
+    public static String TEST_ROW = "1 Vasiliy Rubenstein 42 MALE 830652.46";
     public static String TESTSecond_ROW = "2 Petr Petrov 30 MALE 930125.01";
 
     public static String TESTMidl_ROW = "130 Ruby Jacobson 33 MALE 944250756.59";

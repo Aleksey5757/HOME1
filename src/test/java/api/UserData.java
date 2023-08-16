@@ -9,6 +9,8 @@ public class UserData {
     private String sex;
     private Double money;
 
+    public UserData() {
+    }
     public UserData(Integer id, String firstName, String secondName, Integer age, String sex, Double money) {
         this.id = id;
         this.firstName = firstName;
