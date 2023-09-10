@@ -23,10 +23,11 @@ public class TestSortApi {
                 .get("users")
                 .then().log().all()
                 .extract().body().jsonPath().getList("$", UserData.class);
-      //  List<Integer> id = users.stream().map(UserData::getId).collect(Collectors.toList());
-      //  List<Integer> sortID = id.stream().sorted().collect(Collectors.toList());
-     //   System.out.println(sortID);
-      //  Assert.assertEquals(sortID, id);
+        List<Integer> id = users.stream().map(UserData::getId).collect(Collectors.toList());
+        List<Integer> sortID = id.stream().sorted().collect(Collectors.toList());
+       System.out.println(sortID);
+       System.out.println(id);
+       Assert.assertEquals(sortID, id);
         ArrayList<UserData> sortedList = new ArrayList<>(users);
         sortedList.sort((user1, user2) -> user1.getId() - user2.getId());
        // Assert.assertEquals(user1,user2);

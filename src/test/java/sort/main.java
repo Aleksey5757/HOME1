@@ -3,6 +3,7 @@ package sort;
 import Help.TestValues;
 import config.ApplicationConfig;
 import io.qameta.allure.Description;
+import io.qameta.allure.Step;
 import org.junit.Assert;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.Alert;
@@ -14,7 +15,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import page.LoginPage;
 import page.UserPage;
-
+import org.junit.jupiter.api.Test;
 import java.time.Duration;
 
 import static org.hamcrest.CoreMatchers.notNullValue;
@@ -99,11 +100,13 @@ public class main {
     @Test
     @Description("3. Test sorting ID (page object)")
     public void sort() {
+
         driver.get(config.baseUrl);
         var userPage = new UserPage(driver, wait);
-        userPage.openPageStep1();
         userPage.CLPage();
         userPage.setSortingByID(true);
         userPage.Assert();
         }
+
+
 }

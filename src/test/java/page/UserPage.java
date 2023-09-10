@@ -101,6 +101,7 @@ public class UserPage extends AbstractPage  {
             idColumn.click();
         }
     }
+   // @Step("шаг 1")
     public void Assert(){
         Assert.assertEquals(getFirstRow(), TestValues.TEST_ROW);
         Assert.assertEquals(getSecondRow(),TestValues.TESTSecond_ROW);
@@ -110,10 +111,7 @@ public class UserPage extends AbstractPage  {
           }
 
 
-    @Step("sdsadasdОткрытие  страницы")
-    public void openPageStep1() {
-        // Открытие страницы
-    }
+
 
 
 
