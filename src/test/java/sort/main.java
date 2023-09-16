@@ -100,7 +100,7 @@ public class main {
     @Test
     @Description("3. Test sorting ID (page object)")
     public void sort() {
-
+//driver.get("http://77.50.236.203:4881/#");
         driver.get(config.baseUrl);
         var userPage = new UserPage(driver, wait);
         userPage.CLPage();

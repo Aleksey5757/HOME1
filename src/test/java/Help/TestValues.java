@@ -8,4 +8,10 @@ public class TestValues {
     public static String TESTSecondLast_ROW = "5982 Василий Тестов 19 MALE 0";
 
     public static String TESTLast_ROW = "5983 Василий Тестов1234455 19 MALE 0";
+
+    public void CheckEmail(){
+        String expectedEmail = "client@mailto.plus";
+
+    }
+
 }
